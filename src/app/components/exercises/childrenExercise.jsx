@@ -3,9 +3,8 @@ import CollapseWrapper from '../common/collapse'
 import PropTypes from 'prop-types'
 
 const WrapperComponent = ({ children }) => {
-  const childrenArray = React.Children.toArray(children)
-  return childrenArray.map(child => {
-    return React.cloneElement(child, { num: childrenArray.indexOf(child) })
+  return React.Children.map(children, (child, index) => {
+    return React.cloneElement(child, { num: index + 1 })
   })
 }
 
