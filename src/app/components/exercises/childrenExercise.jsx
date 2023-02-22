@@ -25,17 +25,21 @@ const ChildrenExercise = () => {
         <code>React.Children.toArray</code>
       </p>
 
-    <WrapperComponent>
-      <Component />
-      <Component />
-      <Component />
-    </WrapperComponent>
+      <WrapperComponent>
+        <Component />
+        <Component />
+        <Component />
+      </WrapperComponent>
     </CollapseWrapper>
   )
 }
 
 const Component = ({ num }) => {
-  return <div>{num} <span>Компонент списка</span></div>
+  return (
+    <div>
+      {num} <span>Компонент списка</span>
+    </div>
+  )
 }
 
 Component.propTypes = {

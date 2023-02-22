@@ -10,10 +10,15 @@ export default function withFunctions(SimpleComponent) {
     localStorage.removeItem('auth', 'token')
   }
 
-  return () => {
+  return (props) => {
     return (
       <CardWrapper>
-        <SimpleComponent isAuth={!!isAuth} onLogin={onLogin} onLogout={onLogout} />
+        <SimpleComponent
+          isAuth={!!isAuth}
+          onLogin={onLogin}
+          onLogout={onLogout}
+          {...props}
+        />
       </CardWrapper>
     )
   }
